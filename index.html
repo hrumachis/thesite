@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <link href="assets/css/origin.css" type="text/css" rel="stylesheet">
+        <title>The Site</title>
+    </head>
+
+    <body :class="{'mobile-menu': menu}">
+        <div id="app" v-cloak>
+            <div id="wrapper">
+                <header>
+                    <div class="width-max-desktop pos-relative@desktop">
+                        <div class="sub-nav hidden@mobile">
+                            <ul>
+                                <li><a href="">Menu link</a></li>
+                                <li><a href="">Menu link</a></li>
+                                <li><a href="">Menu link</a></li>
+                            </ul>
+                        </div>
+    
+                        <a href=""></a><div class="logo">{{siteName}}</div></a>
+
+                        <div class="mobile-menu visible@mobile">
+                            <div @click="toggleMenu" class="icon" :class="{'close': menu}">
+                                <div class="bar1"></div>
+                                <div class="bar2"></div>
+                                <div class="bar3"></div>
+                            </div>
+
+                            <div v-if="menu" class="menu">
+                                <ul>
+                                    <li><a href="">Menu link</a></li>
+                                    <li><a href="">Menu link</a></li>
+                                    <li><a href="">Menu link</a></li>
+                                </ul>
+
+                                <hr>
+
+                                <ul>
+                                    <li class="list">
+                                        <a><div class="option">Menu link</div></a>
+    
+                                        <ul>
+                                            <a href=""><li>Menu option</li></a>
+                                            <a href=""><li>Menu option</li></a>
+                                            <a href=""><li>Menu option</li></a>
+                                            <a href=""><li>Menu option</li></a>
+                                        </ul>
+                                    </li>
+                                    <li class="list">
+                                        <a><div class="option">Menu link</div></a>
+    
+                                        <ul>
+                                            <a href=""><li>Menu option</li></a>
+                                            <a href=""><li>Menu option</li></a>
+                                            <a href=""><li>Menu option</li></a>
+                                            <a href=""><li>Menu option</li></a>
+                                            <a href=""><li>Menu option</li></a>
+                                            <a href=""><li>Menu option</li></a>
+                                        </ul>
+                                    </li>
+                                    <li class="list">
+                                        <a><div class="option">Menu link</div></a>
+    
+                                        <ul>
+                                            <a href=""><li>Menu option</li></a>
+                                            <a href=""><li>Menu option</li></a>
+                                            <a href=""><li>Menu option</li></a>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Menu link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <div class="nav hidden@mobile">
+                            <ul>
+                                <li class="dropdown">
+                                    <a href=""><div class="option">Menu link</div></a>
+
+                                    <ul>
+                                        <a href=""><li>Menu option</li></a>
+                                        <a href=""><li>Menu option</li></a>
+                                        <a href=""><li>Menu option</li></a>
+                                        <a href=""><li>Menu option</li></a>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href=""><div class="option">Menu link</div></a>
+
+                                    <ul>
+                                        <a href=""><li>Menu option</li></a>
+                                        <a href=""><li>Menu option</li></a>
+                                        <a href=""><li>Menu option</li></a>
+                                        <a href=""><li>Menu option</li></a>
+                                        <a href=""><li>Menu option</li></a>
+                                        <a href=""><li>Menu option</li></a>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href=""><div class="option">Menu link</div></a>
+
+                                    <ul>
+                                        <a href=""><li>Menu option</li></a>
+                                        <a href=""><li>Menu option</li></a>
+                                        <a href=""><li>Menu option</li></a>
+                                    </ul>
+                                </li>
+                                <li><a href="">Menu link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="width-max-desktop">
+                    <div class="columns width-1-1">
+                        <div class="width-2-3 no-borders">
+                            <div class="columns">
+                                <div class="width-1-1">
+                                    <div class="padding-medium bg-white">
+                                        <h2 class="margin-remove">{{title}}</h2>
+                                        <p>{{example}}</p>
+                                        <p>{{example}}</p>
+                                        <p>{{example}}</p>
+                                        <p>{{example}}</p>
+                                        <p>{{example}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="columns margin-medium-top">
+                                <div class="width-1-2 bg-white">
+                                    <div class="padding-medium">
+                                        <p>{{example}}</p>
+                                    </div>
+                                </div>
+            
+                                <div class="width-1-2 bg-white">
+                                    <div class="padding-medium">
+                                        <h3>{{title}}</h3>
+                                        <ul>
+                                            <li><a href="">{{link}} alpha</a></li>
+                                            <hr class="simple">
+                                            <li><a href="">{{link}} bheta</a></li>
+                                            <hr class="simple">
+                                            <li><a href="">{{link}} theta</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="width-1-3">
+                            <h3 class="margin-remove">{{title}}</h3>
+                            <hr></hr>
+                            <p>{{example}}</p>
+
+                            <form @submit.prevent="submit"> 
+                                <fieldset>
+                                    
+
+                                    <div class="field">
+                                        <label>
+                                            <div class="name">First name:</div>
+                                            <input type="text" :class="{'error': message.attempted && empty(message.firstName)}" placeholder="Enter your name" v-model="message.firstName">
+                                        </label>
+                                    </div>
+
+                                    <div class="field">
+                                        <label>
+                                            <div class="name">Last name:</div>
+                                            <input type="text" :class="{'error': message.attempted && empty(message.lastName)}" placeholder="Enter your last name" v-model="message.lastName">
+                                        </label>
+                                    </div>
+
+                                    <div class="field">
+                                        <label>
+                                            <div class="name">Message:</div>
+                                            <textarea :class="{'error': message.attempted && (empty(message.text) || message.text.length < 50)}" v-model="message.text"></textarea>
+                                        </label>
+                                    </div>
+
+                                    <div v-if="message.attempted && errors" class="errors">
+                                        <div v-if="empty(message.firstName)">Enter your first name</div>
+                                        <div v-if=" empty(message.lastName)">Enter your last name</div>
+                                        <div v-if="message.text.length < 50">Message must be of 50 ({{ message.text.length}}) characters length</div>
+                                    </div>
+
+                                    <div v-if="!errors && message.submited" class="succesful">
+                                        <div>Submited</div>
+                                    </div>
+
+                                    <button type="submit">Submit</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="columns bg-darkgrey margin-medium-top">
+                        <div class="width-1-3 padding-medium no-borders">
+                            {{example}}
+                        </div>
+                        <div class="width-1-3 padding-medium no-borders">
+                            {{example}}
+                        </div>
+                        <div class="width-1-3 padding-medium no-borders">
+                            {{example}}
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <footer>
+                <div class="width-max-desktop pos-relative height-1-1">
+                    <div class="sub-nav">
+                        <ul>
+                            <li><a href="">Menu link</a></li>
+                            <li><a href="">Menu link</a></li>
+                            <li><a href="">Menu link</a></li>
+                            <li><a href="">Menu link</a></li>
+                            <li><a href="">Menu link</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="description">{{example}}</div>
+
+                    <a href=""><div class="logo">{{siteName}}</div></a>
+                </div>
+            </footer>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({ el: '#app', data: {
+                    siteName: "The Site",
+                    title: "Lorem ipsum dolor sit amet, nam ludus pericula voluptaria an",
+                    link: "Lorem ipsum dolor sit",
+                    example: "Lorem ipsum dolor sit amet, nam ludus pericula voluptaria an. Clita aperiri ad sed. Munere ignota deseruisse pri cu, pro quas detraxit no, alia tantas debitis sit ei. Omnium timeam has an, noster philosophia eum cu, quo vidisse ocurreret argumentum an. Cu postea adolescens posidonium eam.",
+                    menu: false,
+                    message: {
+                        firstName: "",
+                        lastName: "",
+                        text: "",
+                        attempted: false,
+                        submited: false
+                    }
+                },
+                computed: {
+                    errors: function() {
+                        this.message.submited = false;
+                        return (this.empty(this.message.firstName) || this.empty(this.message.lastName) || this.empty(this.message.text) || this.message.text.length < 50);
+                    }
+                },
+                mounted: function() {
+                    console.log("hey");
+                },
+                methods: {
+                    submit: function() {
+                        this.message.attempted = true;
+                        this.message.submited = true;
+                    },
+                    toggleMenu: function() {
+                        this.menu = !this.menu;
+                    },
+                    empty: function(string) {
+                        return string != "" ? false : true;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
